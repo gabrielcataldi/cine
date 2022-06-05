@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Peliculas
+{% endblock %}
+
+{% block contenido %}
+<h1>Aca va el contenido de peliculas</h1>
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for pelicula in Peliculas %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{pelicula.titulo}}</h5>
+            <p class="card-text">{{product.duracion}}</p>
+            <p class="card-text">{{product.año}}</p>
+            <p class="card-text">{{pelicula.actores}}</p>
+            <p class="card-text">{{pelicula.sku}}</p>
+            <p class="card-text">{{pelicula.active}}</p>
+            <a href="#" class="btn btn-primary">Comprar!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

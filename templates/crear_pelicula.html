@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Contacto
+{% endblock %}
+
+{% block contenido %}
+
+{% if form %}
+    <h1>Crear nueva pelicula</h1>
+
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit", value="Enviar!">
+    </form>
+{% elif new_pelicula %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{new_pelicula.titulo}}</h5>
+            <p class="card-text">{{new_pelicula.duracion}}</p>
+            <p class="card-text">{{new_pelicula.actores}}</p>
+            <p class="card-text">{{new_pelicula.año}}</p>
+            <p class="card-text">{{new_pelicula.sku}}</p>
+            <p class="card-text">{{new_pelicula.active}}</p>
+        </div>
+    </div>
+
+{% endif %}
+
+{% endblock %}
